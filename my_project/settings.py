@@ -38,8 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'sample_app.apps.SampleAppConfig', # 追加アプリのクラスを追加した
-    'django_bootstrap5', # 追加
+    'sample_app.apps.SampleAppConfig', # アプリの追加
 ]
 
 MIDDLEWARE = [
@@ -120,6 +119,11 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
@@ -127,10 +131,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # 静的ファイルの呼び出し設定を１番下に追加
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) 
-PROJECT_NAME = os.path.basename(BASE_DIR)
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')] 
-STATIC_ROOT = '/var/www/{}/static'.format(PROJECT_NAME)
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) 
+# PROJECT_NAME = os.path.basename(BASE_DIR)
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')] 
+# STATIC_ROOT = '/var/www/{}/static'.format(PROJECT_NAME)
 
 # メディアファイルに関する設定
 MEDIA_URL = '/media/'
