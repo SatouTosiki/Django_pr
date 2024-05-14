@@ -1,18 +1,9 @@
 
-html,body{margin:0;padding:0;}
-*{border:solid 1px red;}
+html,body{margin:0;padding:0;}/* 隙間を埋めるためのコード */
 
-.area{
-  text-align: center;
 
-}
 
-.start_button{
 
-  padding: 20px 40px;
-  border: solid 1px currentColor;
-  text-decoration: none;
-}
 
 .divtest {
   display: flex;
@@ -24,13 +15,6 @@ opacity:0.8;
 background: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);
 }
 
-
-
-
- /* 
-** The Header Media Queries **
-** Tweak as per your needs **
-*/
 .brand {
   font-weight: bold;
   font-size: 20px; }
@@ -89,9 +73,39 @@ background: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);
         width:500px;
         margin: 0 auto;
       }
-
-
-
-      .p {
-        color: #2CD8D5;
-      }
+/* アイコンのスタイル */
+.audio.icon {
+    color: #000;
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 8px;
+    width: 9px;
+    height: 7px;
+    border-left: solid 1px currentColor;
+    border-right: solid 1px currentColor;
+    border-bottom: solid 1px currentColor;
+    border-radius: 0 0 50% 50%;
+  }
+  
+  .audio.icon:before {
+    content: '';
+    position: absolute;
+    left: 1px;
+    top: -6px;
+    width: 5px;
+    height: 10px;
+    border: solid 1px currentColor;
+    border-radius: 4px;
+  }
+  
+  .audio.icon:after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    bottom: -4px;
+    width: 1px;
+    height: 4px;
+    background-color: currentColor;
+  }
+  
+  
