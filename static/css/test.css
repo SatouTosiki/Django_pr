@@ -3,8 +3,6 @@ html,body{margin:0;padding:0;}/* 隙間を埋めるためのコード */
 
 
 
-
-
 .divtest {
   display: flex;
   justify-content: center;
@@ -15,10 +13,12 @@ opacity:0.8;
 background: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);
 }
 
+/* ヘッダーボタンのスタイル */
 .brand {
   font-weight: bold;
   font-size: 20px; }
 
+/* ヘッダースタイル */
 .site-header {
   position: relative;
   background-color: white; }
@@ -54,58 +54,8 @@ background: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);
       opacity: 1;
       transform: translateY(0); } }
 
-.nav__item a {
-  display: block;
-  padding: 1.5rem 1rem; }
 
-.nav__toggle {
-  display: none; }
-  @media (max-width: 599px) {
-    .nav__toggle {
-      display: block;
-      position: absolute;
-      right: 1rem;
-      top: 1rem; } }
-
-
-
-      .center{
-        width:500px;
-        margin: 0 auto;
-      }
 /* アイコンのスタイル */
-.audio.icon {
-    color: #000;
-    position: absolute;
-    margin-left: 5px;
-    margin-top: 8px;
-    width: 9px;
-    height: 7px;
-    border-left: solid 1px currentColor;
-    border-right: solid 1px currentColor;
-    border-bottom: solid 1px currentColor;
-    border-radius: 0 0 50% 50%;
-  }
-  
-  .audio.icon:before {
-    content: '';
-    position: absolute;
-    left: 1px;
-    top: -6px;
-    width: 5px;
-    height: 10px;
-    border: solid 1px currentColor;
-    border-radius: 4px;
-  }
-  
-  .audio.icon:after {
-    content: '';
-    position: absolute;
-    left: 4px;
-    bottom: -4px;
-    width: 1px;
-    height: 4px;
-    background-color: currentColor;
-  }
-  
+
+
   
