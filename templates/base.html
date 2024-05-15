@@ -3,7 +3,7 @@
 <html lang="ja">
   <head>  
     <!-- <link rel="stylesheet" type='text/css' href="{% static 'css/toppage.css'%}"> -->
-    <link rel="stylesheet" type='text/css' href="{% static 'css/test.css'%}">
+    <link rel="stylesheet" type='text/css' href="{% static 'css/test2.css'%}">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <title> Django音声メモ </title>
     <!-- {% block extra_css %}{% endblock %} -->
@@ -11,7 +11,13 @@
   <body>
     <header class="site-header">
       <div class="wrapper site-header__wrapper">
-        <a href="#" class="brand">django</a>
+        <div class="testss">
+          <a href="" class="topbutton">
+            <span class="side top">むずい</span>
+              <span class="side front">django</span>
+        </a>
+        </div>
+      
           <ul class="nav__wrapper">
             <p>django</p> 
             <p>django</p>
@@ -21,9 +27,12 @@
     </header>
     <div class="divtest">
       <div class="area">
-        <button class="start_button" type="submit">test</button>
+        
+        <button class="start_button" type="button">start</button>
+
       </div>
     </div>
+    <p>test</p>
 
           {% block contents %}
           <!-- ここがtop_pageの入る部分 -->

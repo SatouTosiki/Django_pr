@@ -1,6 +1,6 @@
 
 html,body{margin:0;padding:0;}/* 隙間を埋めるためのコード */
-*{border:solid 1px red;}
+/* *{border:solid 1px red;} */
 
 /* div要素のスタイル */
 .divtest {
@@ -13,8 +13,8 @@ opacity:0.8;
 background: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);
 }
 
-a.btn_18 {
-	display: block;
+ /* startボタンのスタイル */
+button.start_button {
 	text-align: center;
 	vertical-align: middle;
 	text-decoration: none;
@@ -29,12 +29,55 @@ a.btn_18 {
 	box-shadow: 5px 5px #27acd9;
 	transition: 0.3s ease-in-out;
 }
-a.btn_18:hover {
+button.start_button:hover {
 	box-shadow: none;
+    font-weight: bold;
 	transform: translate(5px, 5px);
 	color: #27acd9;
 }
 
+
+/* toppageに戻る左上のアイコンのスタイル */
+a.topbutton {
+	display: flex;
+	vertical-align: middle;
+	text-decoration: none;
+	margin: auto;
+	width: 20em;
+	height: 4em;
+	color: #ccc;
+	cursor: pointer;
+	transition: all 0.85s cubic-bezier(.17,.67,.14,.93);
+	transform-style: preserve-3d;
+	transform-origin: 100% 50%;
+}
+a.topbutton:hover {
+	transform: rotateX(-90deg);
+}
+a.topbutton .side {
+	box-sizing: border-box;
+	position: absolute;
+	display: inline-block;
+	width: 20em;
+	text-align: center;
+	padding: 1.2rem 4rem;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+a.topbutton .top {
+	background: #b4e12b;
+	color: #fff;
+	transform: rotateX(90deg) translate3d(0, 0, 2em);
+}
+a.topbutton .front {
+	background: #27acd9;
+	color: #fff;
+	transform: translate3d(0, 0, 2em);
+}
+
+.testss {
+    margin-right:auto;
+}
 
 /* ヘッダーボタンのスタイル */
 .brand {
@@ -80,5 +123,7 @@ a.btn_18:hover {
 
 /* アイコンのスタイル */
 
-
+.p{
+    color: blue;
+}
   
