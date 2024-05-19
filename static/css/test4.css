@@ -5,22 +5,22 @@ html,body{margin:0;padding:0;}/* 隙間を埋めるためのコード */
 /* div要素のスタイル */
 .divtest {
   display: flex;
-  justify-content: center;
-  align-items: center;
-width: 100%;
-height: 100vh;
-opacity:0.8;
-background: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);
+    justify-content: center; 
+    /*横軸のセンター */
+    width: 100%;
+    height: 100vh;
+    opacity:0.8;
+    background: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);
+/* background-color: violet; */
 }
 
  /* startボタンのスタイル */
-button.start_button {
+#start-btn {
 	text-align: center;
 	vertical-align: middle;
 	text-decoration: none;
 	position: relative;
 	width: 120px;
-	margin: auto;
 	padding: 1rem 4rem;
 	font-weight: bold;
 	border-radius: 10px;
@@ -28,8 +28,10 @@ button.start_button {
 	border: 3px solid #27acd9;
 	box-shadow: 5px 5px #27acd9;
 	transition: 0.3s ease-in-out;
+    margin-top: 10px;
 }
-button.start_button:hover {
+
+#start-btn:hover {
 	box-shadow: none;
     font-weight: bold;
 	transform: translate(5px, 5px);
