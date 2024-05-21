@@ -3,7 +3,7 @@
 <html lang="ja">
   <head>  
     <!-- <link rel="stylesheet" type='text/css' href="{% static 'css/toppage.css'%}"> -->
-    <link rel="stylesheet" type='text/css' href="{% static 'css/test4.css'%}">
+    <link rel="stylesheet" type='text/css' href="{% static 'css/test6.css'%}">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <title> Django音声メモ </title>
     <!-- {% block extra_css %}{% endblock %} -->
@@ -13,82 +13,22 @@
       <div class="wrapper site-header__wrapper">
         <div class="testss">
           <a href="" class="topbutton">
-            <span class="side top">むずい</span>
-              <span class="side front">django</span>
+            <span class="side top">test</span>
+              <span class="side front">文字起こし</span>
         </a>
         </div>
-      
           <ul class="nav__wrapper">
-            <p>django</p> 
-            <p>django</p>
+            <p>user</p> 
+            <p>pr</p>
           </ul>
         </nav>
       </div>
     </header>
-
-    <!-- <div class="divtest">
-      <div class="area">
-        <button id="start-btn" type="button">start</button>
-    </div>
-    </div> -->
-
-      
-    </div class="tests">
-      <label for="name">test</label>
-      <input type="text" id="name" name="name" required minlength="4" maxlength="2" size="10" />
-    </div>
-    <p>test</p>
-    
-    <button type="button" class="deftest">実行</button>
-
+  
           {% block contents %}
           <!-- ここがtop_pageの入る部分 -->
           {% endblock %}
-          
-
-          
   </body>
 </html>
 
 
-
-
-
-
-<button id="stop-btn">stop</button>
-<div id="result-div"></div>
-
-<script>
-  const startBtn = document.querySelector('#start-btn');
-  const stopBtn = document.querySelector('#stop-btn');
-  const resultDiv = document.querySelector('#result-div');
-
-  SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
-  let recognition = new SpeechRecognition();
-
-  recognition.lang = 'ja-JP';
-  recognition.interimResults = true;
-  recognition.continuous = true;
-
-  let finalTranscript = ''; // 確定した(黒の)認識結果
-
-  recognition.onresult = (event) => {
-    let interimTranscript = ''; // 暫定(灰色)の認識結果
-    for (let i = event.resultIndex; i < event.results.length; i++) {
-      let transcript = event.results[i][0].transcript;
-      if (event.results[i].isFinal) {
-        finalTranscript += transcript;
-      } else {
-        interimTranscript = transcript;
-      }
-    }
-    resultDiv.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
-  }
-
-  startBtn.onclick = () => {
-    recognition.start();
-  }
-  stopBtn.onclick = () => {
-    recognition.stop();
-  }
-</script>

@@ -1,0 +1,171 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    /* background: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%); */
+  } /* 隙間を埋めるためのコード */
+  
+  /* div要素のスタイル */
+  .divtest {
+    display: flex;
+    justify-content: center; 
+    /*横軸のセンター */
+    width: 100%;
+    height: 20vh;
+    opacity: 0.8;
+    /* background: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%); */
+  }
+
+  /* startボタンのスタイル */
+  #start-btn {
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    position: relative;
+    width: 220px; 
+    /* 横のおおきさ */
+    height: 100px;
+    /* 高さ指定 */
+    margin-top: 10px; /* 上から10ピクセルの場所に配置 */
+    padding: 1rem 4rem;
+    font-weight: bold;
+    border-radius: 20px;
+    color: #27acd9;
+    border: 3px solid #27acd9;
+    box-shadow: 5px 5px #27acd9;
+    transition: 0.3s ease-in-out;
+
+    
+  }
+  /* ストップボタンのスタイル */
+  #start-btn:hover {
+    box-shadow: none;
+    font-weight: bold;
+    transform: translate(5px, 5px);
+    color: #27acd9;
+  }
+
+  a.stop-btn {
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	width: 120px;
+	margin: auto;
+	padding: 1rem 4rem;
+	border-radius: 100vw;
+	color: #fff;
+	background: #27acd9;
+    margin: top 10px;
+
+}
+a.stop-btn:hover {
+	background-position: right center;
+	background-size: 200% auto;
+	-webkit-animation: pulse 2s infinite;
+	animation: stop-btn 1.5s infinite;
+	color: #fff;
+}
+@keyframes stop-btn {
+	0% {box-shadow: 0 0 0 0 #27acd9;}
+	70% {box-shadow: 0 0 0 10px rgb(39 172 217 / 0%);}
+	100% {box-shadow: 0 0 0 0 rgb(39 172 217 / 0%);}
+}
+  
+  /* toppageに戻る左上のアイコンのスタイル */
+  a.topbutton {
+    display: flex;
+    vertical-align: middle;
+    text-decoration: none;
+    margin: auto;
+    width: 20em;
+    height: 4em;
+    color: #ccc;
+    cursor: pointer;
+    transition: all 0.85s cubic-bezier(.17,.67,.14,.93);
+    transform-style: preserve-3d;
+    transform-origin: 100% 50%;
+  }
+  a.topbutton:hover {
+    transform: rotateX(-90deg);
+  }
+  a.topbutton .side {
+    box-sizing: border-box;
+    position: absolute;
+    display: inline-block;
+    width: 20em;
+    text-align: center;
+    padding: 1.2rem 4rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  a.topbutton .top {
+    background: #b4e12b;
+    color: #fff;
+    transform: rotateX(90deg) translate3d(0, 0, 2em);
+  }
+  a.topbutton .front {
+    background: #27acd9;
+    color: #fff;
+    transform: translate3d(0, 0, 2em);
+  }
+  
+  .testss {
+    margin-right: auto;
+  }
+  
+  /* ヘッダーボタンのスタイル */
+  .brand {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  /* ヘッダースタイル */
+  .site-header {
+    position: relative;
+    background-color: white;
+  }
+  
+  .site-header__wrapper {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  @media (min-width: 600px) {
+    .site-header__wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+  @media (min-width: 600px) {
+    .nav__wrapper {
+      display: flex;
+    }
+  }
+  
+  @media (max-width: 599px) {
+    .nav__wrapper {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      left: 0;
+      z-index: -1;
+      background-color: #d9f0f7;
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(-100%);
+      transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    }
+    .nav__wrapper.active {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+  
+
+
+  
