@@ -2,8 +2,13 @@ html, body {
     margin: 0;
     padding: 0;
     background: #FCF9EF; 
-    /* background: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%); */
+    font-family: "Tsukimi Rounded", sans-serif;
+    /* ページ全体のフォント */
   } /* 隙間を埋めるためのコード */
+
+
+
+  
 
   
   /* div要素のスタイル */
@@ -168,11 +173,14 @@ html, body {
   }
 
 
-  #result {
-    font-size: 20px;
-    color: #27acd9;
-  }
 
+  #result-div {
+
+    height: 20px;
+    width: auto;
+    background-color: #E6EAF2;
+    font-size: 20px;
+  }
   
 
 
