@@ -4,7 +4,7 @@
 
 const startBtn = document.querySelector('#start-btn');
 const stopBtn = document.querySelector('#stop-btn');
-const resultDiv = document.querySelector('#result-div');
+const resultDiv = document.querySelector('#result-area');
 
 SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
 let recognition = new SpeechRecognition();
