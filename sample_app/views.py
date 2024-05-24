@@ -9,10 +9,17 @@ class SampleView(View):
 top_page = SampleView.as_view()
 
 
+def aichat(request):
+    return render(request, 'myapp/AIchat.html')
 
+def aichat(request):
+    return render(request, 'AIchat.html')  # AIchat.htmlテンプレートをレンダリング
 
 def index(request):
 	return HttpResponse("Helloworld")
+
+
+
 
 
 
