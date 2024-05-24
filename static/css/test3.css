@@ -47,12 +47,12 @@ html, body {
   }
 
   #stop-btn {
-	/* display: block; */
+	display: block;
 	text-align: center;
 	vertical-align: middle;
 	text-decoration: none;
 	width: 120px;
-	/* margin: auto; */
+	margin: auto;
 	padding: 1rem 4rem;
 	border-radius: 100vw;
 	color: #fff;
@@ -74,43 +74,30 @@ html, body {
 }
   
   /* toppageに戻る左上のアイコンのスタイル */
-  a.topbutton {
-    display: flex;
-    vertical-align: middle;
-    text-decoration: none;
-    margin: auto;
-    width: 20em;
-    height: 4em;
-    color: #ccc;
-    cursor: pointer;
-    transition: all 0.85s cubic-bezier(.17,.67,.14,.93);
-    transform-style: preserve-3d;
-    transform-origin: 100% 50%;
-  }
-  a.topbutton:hover {
-    transform: rotateX(-90deg);
-  }
-  a.topbutton .side {
-    box-sizing: border-box;
-    position: absolute;
-    display: inline-block;
-    width: 20em;
-    text-align: center;
-    padding: 1.2rem 4rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-  }
-  a.topbutton .top {
-    background: #b4e12b;
-    color: #fff;
-    transform: rotateX(90deg) translate3d(0, 0, 2em);
-  }
-  a.topbutton .front {
-    background: #27acd9;
-    color: #fff;
-    transform: translate3d(0, 0, 2em);
-  }
-  
+  a.btn_21 {
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	width: 120px;
+	margin: auto;
+	padding: 1rem 4rem;
+	font-weight: bold;
+	border: 2px solid #27acd9;
+	background: #27acd9;
+	color: #fff;
+	border-radius: 5px;
+	transition: 0.5s;
+	animation: move_c 1s infinite;
+}
+@keyframes move_c {
+    0% {transform: translate(0px, 0)}
+    50% {transform: translate(0px, 0) rotateZ(5deg)}
+}
+a.btn_21:hover {
+	color: #27acd9;
+	background: #fff;
+}
   .testss {
     margin-right: auto;
   }
@@ -188,7 +175,33 @@ html, body {
     /* result-div内のテキストの感覚を開けている */
   }
 
-
+/* AIの質問ボタン */
+  a.ai-button {
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	width: 120px;
+	margin: auto;
+	padding: 1rem 4rem;
+	font-weight: bold;
+	color: #27acd9;
+	border-bottom: 2px solid #27acd9;
+	border-radius: 100vh;
+	box-shadow: 0 2px 7px rgba(0, 0, 0, .3);
+	-webkit-box-shadow: 0 2px 7px rgba(0, 0, 0, .3);
+	transition: 0.5s;
+}
+a.ai-button:hover {
+	color: #fff;
+	background: #27acd9;
+	border-bottom: 2px solid #fff;
+	transform: translateY(3px);
+}
 
   
+/* buttonの隙間 */
+#supes {
+    padding: 1em;
+}
  
