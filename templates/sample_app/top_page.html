@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %}
 {% block contents %}
 {% load static %}
@@ -9,63 +8,71 @@
 
 <div id="result-div">
     <span id="result-area">
-      <span style="color: gray;">話すとここに文字が表示されます。</span>
-      </span>
+      test
+        <!-- <span style="color: gray;">話すとここに文字が表示されます。</span> -->
+    </span>
 </div>
-<!-- ↑このdivで文字を表示させている -->
+
 <button id="stop-btn">STOP</button>
 
-<!-- <script src="{% static 'js/execution.js' %}"></script> -->
+<script>
+    const startBtn = document.querySelector('#start-btn');
+    const stopBtn = document.querySelector('#stop-btn');
+    const resultDiv = document.querySelector('#result-area');
 
-    <script>
-        const startBtn = document.querySelector('#start-btn');
-        const stopBtn = document.querySelector('#stop-btn');
-        const resultDiv = document.querySelector('#result-area');
-      
-        SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
-        let recognition = new SpeechRecognition();
-      
-        recognition.lang = 'ja-JP';
-        recognition.interimResults = true;
-        recognition.continuous = true;
-      
-        let finalTranscript = ''; // 確定した(黒の)認識結果
-      
-        recognition.onresult = (event) => {
-          let interimTranscript = ''; // 暫定(灰色)の認識結果
-          for (let i = event.resultIndex; i < event.results.length; i++) {
+    SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
+    let recognition = new SpeechRecognition();
+
+    recognition.lang = 'ja-JP';
+    recognition.interimResults = true;
+    recognition.continuous = true;
+
+    let finalTranscript = ''; // 確定した(黒の)認識結果
+
+    recognition.onresult = (event) => {
+        let interimTranscript = ''; // 暫定(灰色)の認識結果
+        for (let i = event.resultIndex; i < event.results.length; i++) {
             let transcript = event.results[i][0].transcript;
             if (event.results[i].isFinal) {
-              finalTranscript += transcript;
+                finalTranscript += transcript;
             } else {
-              interimTranscript = transcript;
+                interimTranscript = transcript;
             }
-          }
-          resultDiv.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
         }
-      
-        startBtn.onclick = () => {
-          recognition.start();
-        }
-        stopBtn.onclick = () => {
-          recognition.stop();
-        }
-      </script>
+        resultDiv.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
+    }
 
+    startBtn.onclick = () => {
+        recognition.start();
+    }
+    stopBtn.onclick = () => {
+        recognition.stop();
+    }
+</script>
 
-<div id="supes">
+<div id="supes"></div>
 
-</div>
+<!-- フォームを追加 -->
+<form id="result-form" method="get" action="{% url 'sample_app:aichat' %}" style="display: none;">
+    <input type="hidden" id="result-input" name="result">
+</form>
 
-<a href="{% url 'sample_app:aichat' %}" class="ai-button">AIに聞く</a>
-<!-- ↑どうやらappの名前がないとエラーが出るらしい -->
+<a href="#" class="ai-button" onclick="submitForm()">AIに聞く</a>
 <br>
 
 <a onclick="window.location.reload(true);">
-	<i class="rest" aria-hidden="true"></i><span>リセット</span>
+    <i class="rest" aria-hidden="true"></i><span>リセット</span>
 </a>
 
-
-
+<script>
+    function submitForm() {
+        // result-areaのテキストを取得
+        const resultText = document.getElementById('result-area').innerText;
+        // hidden inputにテキストを設定
+        document.getElementById('result-input').value = resultText;
+        // フォームを送信
+        document.getElementById('result-form').submit();
+    }
+</script>
 
 {% endblock %}
