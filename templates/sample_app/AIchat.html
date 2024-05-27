@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 {% block contents %}
-    <p> {{ result }}</p>
+<h1>AIchatPage</h1>
+<div id="ai-page-result">
+    <p>{{result}}</p>
+</div>
+
+<div class="chat-area">
+	<label class="ef">
+	<input type="text" placeholder="例:重要なところまとめて">
+	</label>
+</div>
 
 
 {% endblock %}
