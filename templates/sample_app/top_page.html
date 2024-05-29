@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block contents %}
 {% load static %}
+
 <div class="divtest">
     <button id="start-btn" type="button">START</button>
     <div style="padding: 1em;"></div>
@@ -12,8 +13,6 @@
         <span style="color: gray;">話すとここに文字が表示されます。</span>
     </span>
 </div>
-
-
 
 <script>
     const startBtn = document.querySelector('#start-btn');
@@ -59,29 +58,22 @@
 
 <div class="chat-area">
   <form method="post">
-      {% csrf_token %}
+
       <label class="ef">
           <input id="user-chat" name="user_chat" type="text" placeholder="例:重要なところまとめて">
       </label>
   </form>
 </div>
 
-<a href="#" class="ai-button" onclick="submitForm()">AIに聞く</a>
-<br>
+<a href="javascript:void(0);" class="ai-button" onclick="getContent()">AIに聞く</a>
 
 <a onclick="window.location.reload(true);">
     <i class="rest" aria-hidden="true"></i><span>リセット</span>
 </a>
 
-<script>
-    function submitForm() {
-        // result-areaのテキストを取得
-        const resultText = document.getElementById('result-area').innerText;
-        // hidden inputにテキストを設定
-        document.getElementById('result-input').value = resultText;
-        // フォームを送信
-        document.getElementById('result-form').submit();
-    }
-</script>
+<!-- 外部JavaScriptファイルの読み込み -->
+<script src="{% static 'js/script.js' %}"></script>
+
+<div id="ai-Generate"></div>
 
 {% endblock %}
