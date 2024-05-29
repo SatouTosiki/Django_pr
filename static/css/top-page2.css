@@ -47,25 +47,29 @@ html, body {
   }
 
   #stop-btn {
-	display: block;
-	text-align: center;
-	vertical-align: middle;
-	text-decoration: none;
-	width: 120px;
-	margin: auto;
-	padding: 1rem 4rem;
-	border-radius: 100vw;
-	color: #fff;
-	background: #27acd9;
-    margin: top 10px;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    position: relative;
+    width: 220px; 
+    /* 横のおおきさ */
+    height: 100px;
+    /* 高さ指定 */
+    margin-top: 10px; /* 上から10ピクセルの場所に配置 */
+    padding: 1rem 4rem;
+    font-weight: bold;
+    border-radius: 20px;
+    color: red;
+    border: 3px solid red;
+    box-shadow: 5px 5px red;
+    transition: 0.3s ease-in-out;
 
 }
 #stop-btn:hover {
-	background-position: right center;
-	background-size: 200% auto;
-	-webkit-animation: pulse 2s infinite;
-	animation: stop-btn 1.5s infinite;
-	color: #fff;
+	box-shadow: none;
+    font-weight: bold;
+    transform: translate(5px, 5px);
+    color: red;
 }
 @keyframes stop-btn {
 	0% {box-shadow: 0 0 0 0 #27acd9;}
@@ -160,7 +164,7 @@ a.btn_21:hover {
     margin: 3em;
     height: 400px;
     width: auto;
-    background-color: #E6EAF2;
+    background-color: white;
     font-size: 20px;
     overflow: auto;
     border:2px dotted #27acd9;

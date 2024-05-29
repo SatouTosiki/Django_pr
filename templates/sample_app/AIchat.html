@@ -1,15 +1,22 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block contents %}
 <h1>AIchatPage</h1>
 <div id="ai-page-result">
-    <p>{{result}}</p>
+    <p id="result-style">{{ result }}</p>
 </div>
 
 <div class="chat-area">
-	<label class="ef">
-	<input type="text" placeholder="例:重要なところまとめて">
-	</label>
+    <form method="post">
+        {% csrf_token %}
+        <label class="ef">
+            <input id="user-chat" name="user_chat" type="text" placeholder="例:重要なところまとめて">
+        </label>
+        <button type="button" class="execution" onclick="getContent()">実行</button>
+    </form>
 </div>
 
+<div id="ai-Generate"></div>
 
+<script src="{% static 'js/ai-chat.js' %}"></script>
 {% endblock %}

@@ -2,17 +2,18 @@
 {% block contents %}
 {% load static %}
 <div class="divtest">
-    <button id="start-btn" type="button">start</button>
+    <button id="start-btn" type="button">START</button>
+    <div style="padding: 1em;"></div>
+    <button id="stop-btn">STOP</button>
 </div>
 
 <div id="result-div">
     <span id="result-area">
-      test
-        <!-- <span style="color: gray;">話すとここに文字が表示されます。</span> -->
+        <span style="color: gray;">話すとここに文字が表示されます。</span>
     </span>
 </div>
 
-<button id="stop-btn">STOP</button>
+
 
 <script>
     const startBtn = document.querySelector('#start-btn');
@@ -55,6 +56,15 @@
 <form id="result-form" method="get" action="{% url 'sample_app:aichat' %}" style="display: none;">
     <input type="hidden" id="result-input" name="result">
 </form>
+
+<div class="chat-area">
+  <form method="post">
+      {% csrf_token %}
+      <label class="ef">
+          <input id="user-chat" name="user_chat" type="text" placeholder="例:重要なところまとめて">
+      </label>
+  </form>
+</div>
 
 <a href="#" class="ai-button" onclick="submitForm()">AIに聞く</a>
 <br>

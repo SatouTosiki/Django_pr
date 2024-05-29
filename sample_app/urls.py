@@ -8,5 +8,3 @@ urlpatterns = [
     path('top_page/', views.top_page, name='top_page'),
     path('AIchat/', views.aichat, name='aichat'),
 ]
-
-
