@@ -1,8 +1,5 @@
 
 window.onload = function(){
-
-
-
 const aiGenerate = document.getElementById('ai-Generate');
 const sendButton = document.getElementById('sendbutton');
 

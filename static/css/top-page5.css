@@ -179,7 +179,7 @@ a.btn_21:hover {
   }
 
 /* AIの質問ボタン */
-.ai-button {
+#ai-button {
 	display: block;
 	text-align: center;
 	vertical-align: middle;
@@ -196,7 +196,7 @@ a.btn_21:hover {
 	transition: 0.5s;
 	writing-mode: horizontal-tb; /* 横書きに設定 */
 }
-.ai-button:hover {
+#ai-button:hover {
 	color: #fff;
 	background: #27acd9;
 	border-bottom: 2px solid #fff;
@@ -205,4 +205,9 @@ a.btn_21:hover {
 
 #ai-Generate {
     text-align: center;
+    color: #27acd9;
+}
+
+.hidden {
+    display: none;
 }

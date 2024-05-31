@@ -11,7 +11,7 @@
 
     // 取得した内容をページ上の特定の場所に表示する場合
     document.getElementById('ai-Generate').innerHTML = 
-          resultText + userInput  
+    resultText  + userInput  
 
 
 
