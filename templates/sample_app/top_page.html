@@ -65,15 +65,22 @@
   </form>
 </div>
 
-<a href="javascript:void(0);" class="ai-button" onclick="getContent()">AIに聞く</a>
+<button href="javascript:void(0);" id="ai-button" onclick="getContent()">union</button>
+<!-- jsファイルにある関数を実行 -->
 
 <a onclick="window.location.reload(true);">
     <i class="rest" aria-hidden="true"></i><span>リセット</span>
 </a>
 
 <!-- 外部JavaScriptファイルの読み込み -->
-<script src="{% static 'js/script.js' %}"></script>
+<!-- <script src="{% static 'js/script.js' %}"></script> -->
+
 
 <div id="ai-Generate"></div>
+
+<button id="sendbutton" class="hidden">処理</button>
+
+
+
 
 {% endblock %}

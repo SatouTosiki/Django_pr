@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.views import View  
 
 
+
   
 class SampleView(View):  
 	def get(self, request, *args, **kwargs):  
@@ -14,3 +15,5 @@ top_page = SampleView.as_view()
 def aichat(request):
     result = request.GET.get('result', 'No result found')
     return render(request, 'sample_app/AIchat.html', {'result': result})
+
+

@@ -179,7 +179,7 @@ a.btn_21:hover {
   }
 
 /* AIの質問ボタン */
-  .ai-button {
+.ai-button {
 	display: block;
 	text-align: center;
 	vertical-align: middle;
@@ -194,6 +194,7 @@ a.btn_21:hover {
 	box-shadow: 0 2px 7px rgba(0, 0, 0, .3);
 	-webkit-box-shadow: 0 2px 7px rgba(0, 0, 0, .3);
 	transition: 0.5s;
+	writing-mode: horizontal-tb; /* 横書きに設定 */
 }
 .ai-button:hover {
 	color: #fff;
@@ -202,3 +203,6 @@ a.btn_21:hover {
 	transform: translateY(3px);
 }
 
+#ai-Generate {
+    text-align: center;
+}
