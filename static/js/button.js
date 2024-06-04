@@ -1,4 +1,5 @@
 
+// 隠れボタンのファイル
 window.onload = function(){
 const aiGenerate = document.getElementById('ai-Generate');
 const sendButton = document.getElementById('sendbutton');
@@ -25,5 +26,7 @@ const config = { childList: true, subtree: true };
 
 // 監視を開始
 observer.observe(aiGenerate, config);
+
+
 
 }

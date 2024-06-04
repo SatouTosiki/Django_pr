@@ -14,47 +14,42 @@
     </span>
 </div>
 
-<script>
-    const startBtn = document.querySelector('#start-btn');
-    const stopBtn = document.querySelector('#stop-btn');
-    const resultDiv = document.querySelector('#result-area');
-
-    SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
-    let recognition = new SpeechRecognition();
-
-    recognition.lang = 'ja-JP';
-    recognition.interimResults = true;
-    recognition.continuous = true;
-
-    let finalTranscript = ''; // 確定した(黒の)認識結果
-
-    recognition.onresult = (event) => {
-        let interimTranscript = ''; // 暫定(灰色)の認識結果
-        for (let i = event.resultIndex; i < event.results.length; i++) {
-            let transcript = event.results[i][0].transcript;
-            if (event.results[i].isFinal) {
-                finalTranscript += transcript;
-            } else {
-                interimTranscript = transcript;
-            }
-        }
-        resultDiv.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
-    }
-
-    startBtn.onclick = () => {
-        recognition.start();
-    }
-    stopBtn.onclick = () => {
-        recognition.stop();
-    }
-</script>
-
 <div id="supes"></div>
 
-<!-- フォームを追加 -->
-<form id="result-form" method="get" action="{% url 'sample_app:aichat' %}" style="display: none;">
-    <input type="hidden" id="result-input" name="result">
-</form>
+<script>
+  const startBtn = document.querySelector('#start-btn');
+const stopBtn = document.querySelector('#stop-btn');
+const resultDiv = document.querySelector('#result-area');
+
+SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
+let recognition = new SpeechRecognition();
+
+recognition.lang = 'ja-JP';
+recognition.interimResults = true;
+recognition.continuous = true;
+
+let finalTranscript = ''; // 確定した(黒の)認識結果
+
+recognition.onresult = (event) => {
+    let interimTranscript = ''; // 暫定(灰色)の認識結果
+    for (let i = event.resultIndex; i < event.results.length; i++) {
+        let transcript = event.results[i][0].transcript;
+        if (event.results[i].isFinal) {
+            finalTranscript += transcript;
+        } else {
+            interimTranscript = transcript;
+        }
+    }
+    resultDiv.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
+}
+
+startBtn.onclick = () => {
+    recognition.start();
+  }
+  stopBtn.onclick = () => {
+    recognition.stop();
+  }
+</script>
 
 <div class="chat-area">
   <form method="post">
@@ -65,22 +60,19 @@
   </form>
 </div>
 
-<button href="javascript:void(0);" id="ai-button" onclick="getContent()">union</button>
-<!-- jsファイルにある関数を実行 -->
-
 <a onclick="window.location.reload(true);">
-    <i class="rest" aria-hidden="true"></i><span>リセット</span>
+  <i class="rest" aria-hidden="true"></i><span>リセット</span>
 </a>
 
-<!-- 外部JavaScriptファイルの読み込み -->
-<!-- <script src="{% static 'js/script.js' %}"></script> -->
+<button href="javascript:void(0);" id="ai-button" onclick="getContent()">確認</button>
 
 
 <div id="ai-Generate"></div>
+<!-- jsで処理された値が入る。音声認識の文字とinputで打ち込んだ文字が合わさる -->
 
-<button id="sendbutton" class="hidden">処理</button>
-
-
+<div id="ai-button-center">
+  <a href="#" id="sendbutton" class="hidden" type="button" >↑この内容で処理↑</a>
+</div>
 
 
 {% endblock %}
