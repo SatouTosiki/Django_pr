@@ -17,7 +17,7 @@
 <div id="supes"></div>
 
 <script>
-  const startBtn = document.querySelector('#start-btn');
+const startBtn = document.querySelector('#start-btn');
 const stopBtn = document.querySelector('#stop-btn');
 const resultDiv = document.querySelector('#result-area');
 
@@ -45,18 +45,19 @@ recognition.onresult = (event) => {
 
 startBtn.onclick = () => {
     recognition.start();
-  }
-  stopBtn.onclick = () => {
+}
+stopBtn.onclick = () => {
     recognition.stop();
-  }
+}
 </script>
 
 <div class="chat-area">
-  <form method="post">
-
+  <form id="main-form" method="post" action="{% url 'sample_app:process' %}">
+      {% csrf_token %}
       <label class="ef">
           <input id="user-chat" name="user_chat" type="text" placeholder="例:重要なところまとめて">
       </label>
+      <input type="hidden" id="combined-content" name="combined_content">
   </form>
 </div>
 
@@ -66,13 +67,30 @@ startBtn.onclick = () => {
 
 <button href="javascript:void(0);" id="ai-button" onclick="getContent()">確認</button>
 
-
 <div id="ai-Generate"></div>
 <!-- jsで処理された値が入る。音声認識の文字とinputで打ち込んだ文字が合わさる -->
 
 <div id="ai-button-center">
-  <a href="#" id="sendbutton" class="hidden" type="button" >↑この内容で処理↑</a>
+  <a href="#" id="sendbutton" type="button" onclick="sendForm()">↑この内容で処理↑</a>
 </div>
 
+<script>
+function getContent() {
+  var resultText = document.getElementById('result-area').innerText;
+  var userInput = document.getElementById('user-chat').value;
+
+  console.log('Result:', resultText);
+  console.log('User Input:', userInput);
+
+  document.getElementById('ai-Generate').innerHTML = 
+  "<p>" + resultText + "</p>" + "<p style='color: red;'>" + userInput + "</p>";
+}
+
+function sendForm() {
+  var combinedContent = document.getElementById('ai-Generate').innerText;
+  document.getElementById('combined-content').value = combinedContent;
+  document.getElementById('main-form').submit();
+}
+</script>
 
 {% endblock %}

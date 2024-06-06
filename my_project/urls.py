@@ -13,6 +13,9 @@ urlpatterns = [
     path('', views.top),#URLが何も指定されなかったときに飛ぶページ
     path('sample_app/', include('sample_app.urls')),  # sample_appのURLパターンをインクルード
     path('admin/', admin.site.urls),
+    path('result/', views.result, name='result'),  # 処理結果のURLパターン
+
+    # path('result/', include("sample_app.urls")),
     # path('AIchat/', include('sample_app.urls'))   
 ]
 
