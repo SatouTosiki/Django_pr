@@ -16,7 +16,11 @@ def process_view(request):
         combined_content = request.POST.get('combined_content', '')
         user_chat = request.POST.get('user_chat', '')
         # ここでcombined_contentやuser_chatを使って必要な処理を行う
-        return HttpResponse(f"Received: {combined_content}")
+        return render(request, 'sample_app/next.html', {
+              "test": combined_content,
+		})
+    
+        #return HttpResponse(f"Received: {combined_content}")
     return render(request, 'sample_app/top_page.html')
 
 
