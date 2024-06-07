@@ -1,7 +1,11 @@
 from django.http import HttpResponse
 from django.shortcuts import render  
 from django.views import View  
+import google.generativeai as genai
 
+GEMINI_API_KEY = "AIzaSyA518VtV-MwFxbrgT2r55oG0kndWq3OEls"
+genai.configure(api_key=GEMINI_API_KEY)
+model = genai.GenerativeModel('gemini-pro')
 
 
   
@@ -15,9 +19,14 @@ def process_view(request):
     if request.method == 'POST':
         combined_content = request.POST.get('combined_content', '')
         user_chat = request.POST.get('user_chat', '')
-        # ここでcombined_contentやuser_chatを使って必要な処理を行う
-        return render(request, 'sample_app/next.html', {
-              "test": combined_content,
+        response_test = model.generate_content(
+  [
+    combined_content
+  ],
+
+)
+        return render(request, 'sample_app/gemini.html', {
+              "result_gemini": response_test.text,
 		})
     
         #return HttpResponse(f"Received: {combined_content}")

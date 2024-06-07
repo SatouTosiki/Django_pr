@@ -1,0 +1,10 @@
+#result_gemini {
+    margin: 3em;
+    height: 400px;
+    width: auto;
+    background-color: white;
+    font-size: 20px;
+    overflow: auto;
+    border:2px dotted #27acd9;
+    border-radius: 30px;
+}
